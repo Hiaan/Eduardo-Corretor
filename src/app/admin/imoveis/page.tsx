@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
-import { Plus } from 'lucide-react'
+import { Plus, Sparkles } from 'lucide-react'
 import { PageHeader } from '@/components/admin/PageHeader'
 import { PropertiesTable } from '@/components/admin/PropertiesTable'
 import { PropertiesFilterBar } from '@/components/admin/PropertiesFilterBar'
@@ -27,12 +27,20 @@ export default async function AdminPropertiesPage({
           properties.length === 1 ? 'imóvel' : 'imóveis'
         } cadastrados.`}
         action={
-          <Button asChild variant="gold">
-            <Link href="/admin/imoveis/novo">
-              <Plus className="h-4 w-4" />
-              Novo imóvel
-            </Link>
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button asChild variant="outline">
+              <Link href="/admin/imoveis/ia">
+                <Sparkles className="h-4 w-4" />
+                Cadastrar com IA
+              </Link>
+            </Button>
+            <Button asChild variant="gold">
+              <Link href="/admin/imoveis/novo">
+                <Plus className="h-4 w-4" />
+                Novo imóvel
+              </Link>
+            </Button>
+          </div>
         }
       />
 
