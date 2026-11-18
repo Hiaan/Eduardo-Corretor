@@ -61,15 +61,29 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const [{ data: hoodsData }, { data: featsData }] = await Promise.all([
+  const [{ data: hoodsData }, { data: featsData }, { data: titlesData }] = await Promise.all([
     supabase.from('neighborhoods').select('*').order('name'),
     supabase.from('features').select('*').order('name'),
+    // Recent titles, so new ones follow the same pattern
+    supabase
+      .from('properties')
+      .select('title')
+      .is('deleted_at', null)
+      .order('created_at', { ascending: false })
+      .limit(30),
   ])
+  const existingTitles = ((titlesData ?? []) as { title: string }[]).map((p) => p.title)
   const neighborhoods = (hoodsData ?? []) as Neighborhood[]
   const features = (featsData ?? []) as Feature[]
 
   try {
-    const result = await extractProperty({ text, images, neighborhoods, features })
+    const result = await extractProperty({
+      text,
+      images,
+      neighborhoods,
+      features,
+      existingTitles,
+    })
 
     const hood = neighborhoods.find((n) => norm(n.name) === norm(result.neighborhood))
     const featureIds = result.features
@@ -83,6 +97,7 @@ export async function POST(request: NextRequest) {
         neighborhood_id: hood?.id ?? null,
         state: (result.state || 'PB').slice(0, 2).toUpperCase(),
         features: Array.from(new Set(featureIds)),
+        video_url: result.video_url?.startsWith('http') ? result.video_url : null,
       },
     })
   } catch (err) {

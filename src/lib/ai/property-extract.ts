@@ -12,7 +12,7 @@ const TYPE_VALUES = PROPERTY_TYPES.map((t) => t.value) as [string, ...string[]]
 export const ExtractedPropertySchema = z.object({
   title: z
     .string()
-    .describe('Título comercial do anúncio, 40 a 80 caracteres, sem emojis'),
+    .describe('Título no padrão do site: "Tipo + destaque | Quartos/Suítes ou m² | Bairro"'),
   purpose: z.enum(['sale', 'rent', 'both']),
   type: z.enum(TYPE_VALUES),
   city: z.string(),
@@ -39,7 +39,10 @@ export const ExtractedPropertySchema = z.object({
   accepts_pets: z.boolean(),
   is_luxury: z.boolean(),
   is_launch: z.boolean(),
-  video_url: z.string().nullable(),
+  video_url: z
+    .string()
+    .nullable()
+    .describe('Link de vídeo (YouTube, Vimeo, Google Drive, Instagram) copiado do texto, ou null'),
   seo_title: z.string(),
   seo_description: z.string(),
   cover_photo: z
@@ -60,7 +63,25 @@ export interface AiImageInput {
   media_type: 'image/jpeg' | 'image/png' | 'image/webp' | 'image/gif'
 }
 
-function buildSystemPrompt(neighborhoods: Neighborhood[], features: Feature[]) {
+const DEFAULT_TITLE_EXAMPLES = [
+  'Apartamento Amplo com Varanda Gourmet | 4 Quartos, 2 Suítes | Cabo Branco',
+  'Flat com Lazer na Cobertura | 43 m² | Ponta de Campina',
+  'Apartamento com Varanda | 3 Quartos, 2 Suítes | Manaíra (Locação)',
+  'Cobertura Duplex com Vista para o Mar | 4 Suítes | Altiplano',
+]
+
+function buildSystemPrompt(
+  neighborhoods: Neighborhood[],
+  features: Feature[],
+  existingTitles: string[]
+) {
+  const titleExamples = (
+    existingTitles.filter((t) => t.includes('|')).slice(0, 10).length
+      ? existingTitles.filter((t) => t.includes('|')).slice(0, 10)
+      : DEFAULT_TITLE_EXAMPLES
+  )
+    .map((t) => `- ${t}`)
+    .join('\n')
   const types = PROPERTY_TYPES.map((t) => `${t.value} (${t.label})`).join(', ')
   const hoods = neighborhoods
     .map((n) => (n.city_name ? `${n.name} — ${n.city_name}` : n.name))
@@ -79,7 +100,14 @@ Regras:
 - Bairro: se corresponder a um bairro cadastrado abaixo, escreva exatamente como está na lista; senão, escreva como no texto.
 - Características: escolha só nomes que existam na lista abaixo, escritos exatamente iguais, quando o texto ou as fotos mostrarem claramente (ex.: piscina visível na foto).
 - is_luxury: true para alto padrão evidente (valor alto, acabamento de luxo, vista mar, cobertura etc.). is_launch: true só se for lançamento/na planta.
-- Título: atrativo e objetivo, ex.: "Apartamento 4 suítes com vista mar no Cabo Branco".
+- Título: SEMPRE no padrão do site, três partes separadas por " | " (espaço, barra vertical, espaço):
+  1) Tipo do imóvel + principal destaque (ex.: "Apartamento Amplo com Varanda Gourmet", "Cobertura Duplex com Vista para o Mar", "Flat com Lazer na Cobertura");
+  2) Quartos e suítes (ex.: "4 Quartos, 2 Suítes"; se todos os quartos forem suítes, só "4 Suítes"); para flat, sala, loja, terreno ou galpão, a área (ex.: "43 m²");
+  3) Bairro. Acrescente "(Locação)" no fim quando for aluguel.
+  Use Iniciais Maiúsculas nas palavras principais (preposições como "com", "de", "para" em minúsculas). Sem emojis, sem preço, sem a palavra "à venda".
+  Títulos já cadastrados no site, para seguir o mesmo estilo:
+${titleExamples}
+- Vídeo: se o texto tiver link de vídeo (YouTube, Vimeo, Google Drive, Instagram), copie o link exato em video_url.
 - Descrição: reescreva em português do Brasil, tom elegante e profissional, 2 a 4 parágrafos, destacando diferenciais; sem emojis, sem telefone e sem preço.
 - seo_title até 60 caracteres; seo_description até 155 caracteres.
 - cover_photo: a foto mais bonita e representativa (fachada, sala ampla ou vista), numerada como nas legendas "Foto N". null se não houver fotos.
@@ -97,11 +125,13 @@ export async function extractProperty({
   images,
   neighborhoods,
   features,
+  existingTitles = [],
 }: {
   text: string
   images: AiImageInput[]
   neighborhoods: Neighborhood[]
   features: Feature[]
+  existingTitles?: string[]
 }): Promise<ExtractedProperty> {
   const client = new Anthropic()
 
@@ -129,7 +159,7 @@ export async function extractProperty({
       effort: 'low',
       format: betaZodOutputFormat(ExtractedPropertySchema),
     },
-    system: buildSystemPrompt(neighborhoods, features),
+    system: buildSystemPrompt(neighborhoods, features, existingTitles),
     messages: [{ role: 'user', content }],
   })
 
