@@ -207,5 +207,16 @@ export function toEmbedUrl(url: string): string {
   // Google Drive: drive.google.com/file/d/FILE_ID/view  ->  /preview
   const driveMatch = url.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([\w-]+)/)
   if (driveMatch) return `https://drive.google.com/file/d/${driveMatch[1]}/preview`
+  // Instagram reel / post  ->  /embed
+  const igMatch = url.match(/instagram\.com\/(reels?|p|tv)\/([\w-]+)/)
+  if (igMatch) {
+    const kind = igMatch[1] === 'reels' ? 'reel' : igMatch[1]
+    return `https://www.instagram.com/${kind}/${igMatch[2]}/embed`
+  }
   return url
+}
+
+/** True for a link straight to a video file (e.g. uploaded to Storage). */
+export function isDirectVideoUrl(url: string): boolean {
+  return /\.(mp4|mov|m4v|webm|ogv)(\?|#|$)/i.test(url)
 }

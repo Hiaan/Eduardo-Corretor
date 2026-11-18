@@ -28,6 +28,7 @@ import {
   getPropertyTypeLabel,
   absoluteUrl,
   toEmbedUrl,
+  isDirectVideoUrl,
 } from '@/lib/utils'
 import type { PropertyFull, SiteSettings } from '@/types'
 
@@ -323,15 +324,25 @@ export default async function PropertyDetailPage({
               <div className="mt-10">
                 <h2 className="font-serif text-2xl font-medium text-brand-navy">Vídeo</h2>
                 <Separator className="my-4" />
-                <div className="aspect-video overflow-hidden rounded-xl">
-                  <iframe
-                    src={toEmbedUrl(property.video_url)}
-                    title={property.title}
-                    className="h-full w-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                {isDirectVideoUrl(property.video_url) ? (
+                  <video
+                    src={property.video_url}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="max-h-[80vh] w-full rounded-xl bg-black"
                   />
-                </div>
+                ) : (
+                  <div className="aspect-video overflow-hidden rounded-xl">
+                    <iframe
+                      src={toEmbedUrl(property.video_url)}
+                      title={property.title}
+                      className="h-full w-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
               </div>
             )}
 

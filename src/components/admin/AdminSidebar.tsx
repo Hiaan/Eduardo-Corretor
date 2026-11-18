@@ -16,6 +16,7 @@ import {
   Menu,
   X,
   ExternalLink,
+  Sparkles,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
@@ -23,6 +24,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 
 const NAV_ITEMS = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
+  { href: '/admin/imoveis/ia', label: 'Cadastrar com IA', icon: Sparkles },
   { href: '/admin/imoveis', label: 'Imóveis', icon: Building2 },
   { href: '/admin/empreendimentos', label: 'Empreendimentos', icon: Building },
   { href: '/admin/leads', label: 'Leads', icon: Users },
@@ -49,8 +51,17 @@ export function AdminSidebar({ userName, userEmail }: AdminSidebarProps) {
     router.refresh()
   }
 
-  const isActive = (item: (typeof NAV_ITEMS)[number]) =>
-    item.exact ? pathname === item.href : pathname.startsWith(item.href)
+  const isActive = (item: (typeof NAV_ITEMS)[number]) => {
+    if (item.exact) return pathname === item.href
+    if (!pathname.startsWith(item.href)) return false
+    // Don't light up a parent when a more specific item matches (e.g. /admin/imoveis vs /admin/imoveis/ia)
+    return !NAV_ITEMS.some(
+      (other) =>
+        other.href.length > item.href.length &&
+        other.href.startsWith(item.href) &&
+        pathname.startsWith(other.href)
+    )
+  }
 
   const initials =
     userName
