@@ -4,6 +4,7 @@ import { WhatsAppButton } from '@/components/public/WhatsAppButton'
 import { getSettings } from '@/lib/settings'
 import { getNeighborhoods } from '@/lib/queries'
 import { MetaPixel } from '@/components/analytics/MetaPixel'
+import { GoogleTagManager } from '@/components/analytics/GoogleTagManager'
 
 export default async function PublicLayout({
   children,
@@ -17,6 +18,7 @@ export default async function PublicLayout({
 
   return (
     <>
+      <GoogleTagManager />
       <MetaPixel />
       <Header settings={settings} />
       <main className="min-h-screen">{children}</main>
