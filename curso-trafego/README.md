@@ -1,6 +1,7 @@
 # Landing page do curso de tráfego pago
 
 Site estático (HTML, CSS e JavaScript puro). Não tem build nem dependências.
+Visual na identidade da T9 ADS Company (preto e vermelho, fontes Archivo e Lexend do Google Fonts).
 
 ```
 curso-trafego/
@@ -10,7 +11,7 @@ curso-trafego/
 ├── css/style.css
 ├── js/config.js        ← todos os dados editáveis
 ├── js/main.js
-└── assets/             instrutor.jpg, capa.jpg, favicon.svg, apple-touch-icon.png
+└── assets/             instrutor.jpg, capa.jpg, logo-t9.svg, favicon.svg, apple-touch-icon.png
 ```
 
 ## Editar os dados (js/config.js)
@@ -25,12 +26,15 @@ Abra `js/config.js` e troque os valores. Tudo na página é preenchido a partir 
 - `pixelMetaId` / `googleTagId`: deixe vazio para não carregar nada. Quando preenchidos, aparece o
   aviso de cookies e os scripts só carregam depois do "Aceitar". Eventos enviados:
   `PageView` / `page_view` ao carregar e `InitiateCheckout` / `begin_checkout` no clique de compra.
-- `videoHero`: link do YouTube (opcional). Vazio = mostra a foto do instrutor.
+- `videoHero`: link do YouTube (opcional). Se preenchido, substitui o notebook + celular do topo.
+- `empresa`, `siteEmpresa`, `logoEmpresa`: marca da T9 no topo, na seção do instrutor e no rodapé.
 - `bonus`: lista de `{ titulo, descricao }`. Cada item vira um cartão.
 
 ### Imagens
-Substitua `assets/instrutor.jpg` (800×1000) e `assets/capa.jpg` (1200×630, usada no
-compartilhamento) mantendo o nome, ou mude o caminho no `config.js`.
+Substitua mantendo o nome (ou mude o caminho no `config.js`):
+- `assets/capa.jpg` (1200×630): aparece na tela do notebook no topo e na prévia do link. A tela
+  do notebook corta em 16:10, então deixe o principal no centro.
+- `assets/instrutor.jpg` (800×1000): seção "Quem ensina" e a tela do celular no topo.
 
 ### Título e prévia no WhatsApp/Facebook
 Robôs de busca e de redes sociais não executam JavaScript. Por isso `<title>`, `meta description`

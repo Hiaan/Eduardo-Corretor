@@ -23,12 +23,17 @@ window.CONFIG = {
   pixelMetaId: "",                    // ex.: "123456789012345"
   googleTagId: "",                    // ex.: "G-XXXXXXX" ou "AW-XXXXXXX"
 
-  // Imagens (troque os arquivos em assets/ mantendo o nome, ou mude o caminho aqui)
-  imagemInstrutor: "assets/instrutor.jpg",
-  imagemCapa: "assets/capa.jpg",
+  // Empresa (aparece no topo e no rodapé)
+  empresa: "T9 ADS Company",
+  siteEmpresa: "https://t9company.com.br",
+  logoEmpresa: "assets/logo-t9.svg",
 
-  // Vídeo do hero (opcional). Link do YouTube, ex.: "https://www.youtube.com/watch?v=XXXXXXXXXXX"
-  // Se ficar vazio, o hero mostra a imagem do instrutor.
+  // Imagens (troque os arquivos em assets/ mantendo o nome, ou mude o caminho aqui)
+  imagemInstrutor: "assets/instrutor.jpg",  // foto do Hian (seção "Quem ensina")
+  imagemCapa: "assets/capa.jpg",            // aparece na tela do notebook no topo da página
+
+  // Vídeo do topo (opcional). Link do YouTube, ex.: "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+  // Se preenchido, substitui o notebook + celular.
   videoHero: "",
 
   bonus: [

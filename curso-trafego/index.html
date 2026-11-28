@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Robôs de busca e de redes sociais não executam JavaScript: revise estes textos manualmente. -->
-  <title>Curso de Tráfego Pago para Negócios Locais | Hian</title>
+  <title>Curso de Tráfego Pago para Negócios Locais | Hian · T9 ADS Company</title>
   <meta name="description" content="Aprenda Meta Ads e Google Ads para colocar seu negócio local na frente de quem tem potencial de compra, começando com cerca de R$ 20 por dia. Por R$ 97.">
-  <meta name="theme-color" content="#0A0F1E">
+  <meta name="theme-color" content="#070102">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="T9 ADS Company">
   <meta property="og:title" content="Curso de Tráfego Pago para Negócios Locais | Hian">
   <meta property="og:description" content="Meta Ads e Google Ads para negócios locais, do zero, com os fundamentos que fazem a técnica dar resultado. Por R$ 97.">
   <meta property="og:image" content="assets/capa.jpg">
@@ -22,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Lexend:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <script>document.documentElement.classList.add('js');</script>
@@ -62,7 +63,13 @@
   <!-- 1. Barra superior -->
   <header class="topbar" id="topo">
     <div class="container topbar__inner">
-      <a class="topbar__brand" href="#conteudo" data-cfg="nomeCurso" data-cfg-hide="nomeCurso"></a>
+      <a class="brand" href="#conteudo">
+        <span class="brand__logo" data-cfg-hide="logoEmpresa">
+          <img data-cfg-src="logoEmpresa" src="assets/logo-t9.svg" width="1041" height="704" alt="T9 ADS Company">
+          <span class="brand__sub" aria-hidden="true">ADS Company</span>
+        </span>
+        <span class="brand__course" data-cfg="nomeCurso" data-cfg-hide="nomeCurso"></span>
+      </a>
       <a class="btn btn--primary btn--sm js-buy topbar__cta" href="#oferta">Quero o curso</a>
     </div>
   </header>
@@ -71,200 +78,202 @@
 
     <!-- 2. Hero com seletor de público -->
     <section class="hero" id="hero" aria-labelledby="hero-titulo">
-      <div class="container">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
         <div class="perfil-switch" role="group" aria-label="Escolha o seu perfil">
           <button type="button" class="perfil-switch__btn" data-set-perfil="empresario" aria-pressed="true">Sou empresário</button>
           <button type="button" class="perfil-switch__btn" data-set-perfil="gestor" aria-pressed="false">Sou gestor de tráfego</button>
         </div>
 
-        <div class="hero__grid">
-          <div class="hero__text">
-            <h1 class="hero__title" id="hero-titulo">
-              <span data-perfil="empresario">Seu concorrente não é melhor que você. <em>Ele só aparece mais.</em></span>
-              <span data-perfil="gestor" hidden>Pare de ser apertador de botões. <em>Vire o gestor que o negócio local quer manter.</em></span>
-            </h1>
-            <p class="hero__sub" data-perfil="empresario">O passo a passo para colocar sua clínica, loja ou escritório na frente de quem tem potencial de compra, no Instagram e no Google, começando com cerca de R$&nbsp;20 por dia.</p>
-            <p class="hero__sub" data-perfil="gestor" hidden>Estratégia, fundamentos e a prática de Meta Ads e Google Ads para atender clínicas, lojas e profissionais liberais e entregar resultado que o cliente enxerga.</p>
+        <p class="pill">Curso de tráfego pago</p>
 
-            <div class="hero__cta">
-              <a class="btn btn--primary btn--lg js-buy" href="#oferta"><span>Quero aprender por <span data-cfg="preco">R$ 97</span></span></a>
-              <p class="hero__note">Acesso imediato · Pagamento seguro</p>
+        <h1 class="hero__title" id="hero-titulo">
+          <span data-perfil="empresario">Seu concorrente não é melhor que você. Ele só <em>aparece mais.</em></span>
+          <span data-perfil="gestor" hidden>Pare de ser apertador de botões. <em>Vire o gestor</em> que o negócio local quer manter.</span>
+        </h1>
+
+        <div class="hero__media" id="hero-media">
+          <div class="devices">
+            <div class="laptop">
+              <div class="laptop__screen">
+                <img data-cfg-src="imagemCapa" src="assets/capa.jpg" width="1200" height="630" alt="Capa do curso de tráfego pago" fetchpriority="high" decoding="async">
+              </div>
+              <div class="laptop__base" aria-hidden="true"></div>
+            </div>
+            <div class="phone" aria-hidden="true">
+              <div class="phone__notch"></div>
+              <div class="phone__screen">
+                <div class="phone__video"><img data-cfg-src="imagemInstrutor" src="assets/instrutor.jpg" width="800" height="1000" alt="" decoding="async"><span class="phone__play"></span></div>
+                <p class="phone__module">Módulo 3 · Meta Ads</p>
+                <p class="phone__count">6 aulas</p>
+                <ol class="phone__list">
+                  <li><i></i><b>1</b><span>Estrutura necessária para anunciar</span></li>
+                  <li><i></i><b>2</b><span>Conta profissional, página e portfólio</span></li>
+                  <li><i></i><b>3</b><span>Públicos: salvo, personalizado e semelhante</span></li>
+                  <li><i></i><b>4</b><span>Criativos que convertem: AIDA</span></li>
+                  <li><i></i><b>5</b><span>Campanha para WhatsApp</span></li>
+                  <li><i></i><b>6</b><span>Campanha de cadastro</span></li>
+                </ol>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="hero__media">
-            <div class="media-frame" id="hero-media">
-              <img data-cfg-src="imagemInstrutor" src="assets/instrutor.jpg" width="800" height="1000" alt="Hian, instrutor do curso" fetchpriority="high" decoding="async">
-            </div>
-          </div>
+        <p class="hero__sub" data-perfil="empresario">O passo a passo para colocar sua clínica, loja ou escritório na frente de quem tem potencial de compra, no Instagram e no Google, começando com cerca de R$&nbsp;20 por dia.</p>
+        <p class="hero__sub" data-perfil="gestor" hidden>Estratégia, fundamentos e a prática de Meta Ads e Google Ads para atender clínicas, lojas e profissionais liberais e entregar resultado que o cliente enxerga.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg js-buy" href="#oferta"><span>Quero aprender por <span data-cfg="preco">R$ 97</span></span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="hero__note"><svg aria-hidden="true"><use href="#i-bolt"/></svg>Acesso imediato · <svg aria-hidden="true"><use href="#i-lock"/></svg>Pagamento seguro</p>
         </div>
       </div>
     </section>
 
+    <!-- Faixa de tópicos -->
+    <div class="ribbon-wrap" aria-hidden="true"><div class="ribbon">
+      <div class="ribbon__track">
+        <span>Meta Ads</span><i>✦</i><span>Google Ads</span><i>✦</i><span>Funil de vendas</span><i>✦</i><span>Comercial e atendimento</span><i>✦</i><span>Google Meu Negócio</span><i>✦</i><span>Criativos com AIDA</span><i>✦</i><span>Métricas</span><i>✦</i>
+        <span>Meta Ads</span><i>✦</i><span>Google Ads</span><i>✦</i><span>Funil de vendas</span><i>✦</i><span>Comercial e atendimento</span><i>✦</i><span>Google Meu Negócio</span><i>✦</i><span>Criativos com AIDA</span><i>✦</i><span>Métricas</span><i>✦</i>
+      </div>
+    </div></div>
+
     <!-- 3. Dores -->
     <section class="section" id="dores" aria-labelledby="dores-titulo">
       <div class="container">
-        <h2 class="section__title reveal" id="dores-titulo">
-          Você se reconhece em alguma destas?
-        </h2>
+        <p class="eyebrow reveal">Onde o dinheiro vaza</p>
+        <h2 class="title reveal" id="dores-titulo">Você se reconhece em <span class="hl">alguma destas?</span></h2>
         <ul class="pains" data-perfil="empresario">
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Aperta o botão impulsionar, gasta e não sabe se voltou alguma coisa.</li>
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Paga alguém para cuidar dos anúncios e não consegue avaliar se o trabalho está bom.</li>
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Recebe mensagens, mas elas não viram agendamento nem venda.</li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Aperta o botão impulsionar, gasta e não sabe se voltou alguma coisa.</p></li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Paga alguém para cuidar dos anúncios e não consegue avaliar se o trabalho está bom.</p></li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Recebe mensagens, mas elas não viram agendamento nem venda.</p></li>
         </ul>
         <ul class="pains" data-perfil="gestor" hidden>
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Sabe onde clicar, mas não sabe explicar por que a campanha não vende.</li>
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Perde cliente que diz que o tráfego não deu resultado.</li>
-          <li class="pain reveal"><span class="pain__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span>Sobe campanha sem olhar o perfil, a oferta e o atendimento do cliente.</li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Sabe onde clicar, mas não sabe explicar por que a campanha não vende.</p></li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Perde cliente que diz que o tráfego não deu resultado.</p></li>
+          <li class="tile tile--pain reveal"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p>Sobe campanha sem olhar o perfil, a oferta e o atendimento do cliente.</p></li>
         </ul>
       </div>
     </section>
 
     <!-- 4. Virada -->
-    <section class="section section--alt" id="virada" aria-labelledby="virada-titulo">
+    <section class="section section--red" id="virada" aria-labelledby="virada-titulo">
       <div class="container">
-        <h2 class="section__title section__title--center reveal" id="virada-titulo">O anúncio traz a conversa. <span class="hl">Quem vende é o conjunto.</span></h2>
+        <p class="eyebrow eyebrow--light reveal">A virada</p>
+        <h2 class="title reveal" id="virada-titulo">O anúncio traz a conversa. <span class="hl">Quem vende é o conjunto.</span></h2>
         <ol class="trinity">
-          <li class="trinity__card reveal">
-            <span class="trinity__num" aria-hidden="true">1</span>
-            <span class="icon-badge" aria-hidden="true"><svg><use href="#i-megaphone"/></svg></span>
-            <h3>Anúncio que chama atenção</h3>
-          </li>
-          <li class="trinity__card reveal">
-            <span class="trinity__num" aria-hidden="true">2</span>
-            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
-            <h3>Conteúdo que retém</h3>
-          </li>
-          <li class="trinity__card reveal">
-            <span class="trinity__num" aria-hidden="true">3</span>
-            <span class="icon-badge" aria-hidden="true"><svg><use href="#i-handshake"/></svg></span>
-            <h3>Comercial que fecha</h3>
-          </li>
+          <li class="step reveal"><span class="step__num" aria-hidden="true">1</span><span class="step__icon" aria-hidden="true"><svg><use href="#i-megaphone"/></svg></span><h3>Anúncio que chama atenção</h3></li>
+          <li class="step reveal"><span class="step__num" aria-hidden="true">2</span><span class="step__icon" aria-hidden="true"><svg><use href="#i-play"/></svg></span><h3>Conteúdo que retém</h3></li>
+          <li class="step reveal"><span class="step__num" aria-hidden="true">3</span><span class="step__icon" aria-hidden="true"><svg><use href="#i-handshake"/></svg></span><h3>Comercial que fecha</h3></li>
         </ol>
-        <p class="trinity__end reveal">Se um deles falha, você está queimando dinheiro.</p>
+        <p class="callout reveal">Se um deles falha, você está <strong>queimando dinheiro.</strong></p>
       </div>
     </section>
 
     <!-- 5. O que você vai aprender -->
     <section class="section" id="aprender" aria-labelledby="aprender-titulo">
       <div class="container">
-        <h2 class="section__title reveal" id="aprender-titulo">O que você vai aprender</h2>
+        <p class="eyebrow reveal">O que você leva</p>
+        <h2 class="title reveal" id="aprender-titulo">O que você vai <span class="hl">aprender</span></h2>
         <ul class="learn-grid">
-          <li class="learn reveal"><span class="icon-badge" aria-hidden="true"><svg><use href="#i-split"/></svg></span><h3>Meta Ads ou Google Ads</h3><p>Qual faz sentido para cada negócio e quando usar os dois.</p></li>
-          <li class="learn reveal"><span class="icon-badge icon-badge--blue" aria-hidden="true"><svg><use href="#i-profile"/></svg></span><h3>O perfil que converte</h3><p>O que precisa estar no Instagram antes de gastar um real em anúncio.</p></li>
-          <li class="learn reveal"><span class="icon-badge" aria-hidden="true"><svg><use href="#i-funnel"/></svg></span><h3>Funil de vendas</h3><p>Conteúdo de topo, meio e fundo: aparecer, alimentar e oferecer.</p></li>
-          <li class="learn reveal"><span class="icon-badge icon-badge--blue" aria-hidden="true"><svg><use href="#i-chat"/></svg></span><h3>Comercial e atendimento</h3><p>Por que os primeiros 5 minutos decidem se o lead fecha com você ou com o concorrente.</p></li>
-          <li class="learn reveal"><span class="icon-badge" aria-hidden="true"><svg><use href="#i-coins"/></svg></span><h3>Quanto investir</h3><p>Como começar pequeno e aumentar conforme o resultado aparece.</p></li>
-          <li class="learn reveal"><span class="icon-badge icon-badge--blue" aria-hidden="true"><svg><use href="#i-target"/></svg></span><h3>Meta Ads na prática</h3><p>Estrutura da conta, públicos, criativos com AIDA, campanha para WhatsApp e campanha de cadastro, na tela, do zero.</p></li>
-          <li class="learn reveal"><span class="icon-badge" aria-hidden="true"><svg><use href="#i-search"/></svg></span><h3>Google Ads na prática</h3><p>Fundamentos, planejador de palavras-chave, campanha de pesquisa e Google Meu Negócio.</p></li>
-          <li class="learn reveal"><span class="icon-badge icon-badge--blue" aria-hidden="true"><svg><use href="#i-chart"/></svg></span><h3>Métricas</h3><p>Como ler os números e decidir o que pausar e o que escalar.</p></li>
-          <li class="learn learn--bonus reveal"><span class="icon-badge" aria-hidden="true"><svg><use href="#i-camera"/></svg></span><h3>Aula bônus</h3><p>Como gravar bons vídeos com o celular: lente, iluminação e som.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-split"/></svg></span><h3>Meta Ads ou Google Ads</h3></div><p>Qual faz sentido para cada negócio e quando usar os dois.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-profile"/></svg></span><h3>O perfil que converte</h3></div><p>O que precisa estar no Instagram antes de gastar um real em anúncio.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-funnel"/></svg></span><h3>Funil de vendas</h3></div><p>Conteúdo de topo, meio e fundo: aparecer, alimentar e oferecer.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-chat"/></svg></span><h3>Comercial e atendimento</h3></div><p>Por que os primeiros 5 minutos decidem se o lead fecha com você ou com o concorrente.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-coins"/></svg></span><h3>Quanto investir</h3></div><p>Como começar pequeno e aumentar conforme o resultado aparece.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-target"/></svg></span><h3>Meta Ads na prática</h3></div><p>Estrutura da conta, públicos, criativos com AIDA, campanha para WhatsApp e campanha de cadastro, na tela, do zero.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-search"/></svg></span><h3>Google Ads na prática</h3></div><p>Fundamentos, planejador de palavras-chave, campanha de pesquisa e Google Meu Negócio.</p></li>
+          <li class="learn reveal"><div class="tile"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-chart"/></svg></span><h3>Métricas</h3></div><p>Como ler os números e decidir o que pausar e o que escalar.</p></li>
+          <li class="learn reveal"><div class="tile tile--hot"><span class="tile__icon" aria-hidden="true"><svg><use href="#i-camera"/></svg></span><h3>Aula bônus</h3></div><p>Como gravar bons vídeos com o celular: lente, iluminação e som.</p></li>
         </ul>
       </div>
     </section>
 
     <!-- 6. Conteúdo do curso -->
-    <section class="section section--alt" id="conteudo-curso" aria-labelledby="modulos-titulo">
-      <div class="container container--narrow">
-        <h2 class="section__title reveal" id="modulos-titulo">Conteúdo do curso</h2>
-        <p class="section__lead reveal" data-cfg-hide="numeroAulas"><span data-cfg="numeroAulas"></span> aulas organizadas em módulos.</p>
-        <div class="accordion">
-          <details class="acc reveal">
-            <summary><span class="acc__tag">Módulo 1</span><span class="acc__title">Fundamentos</span></summary>
-            <ul class="acc__list">
-              <li>Boas-vindas e por que investir em tráfego</li>
-              <li>Meta Ads ou Google Ads</li>
-              <li>Funil de vendas na prática</li>
-            </ul>
+    <section class="section section--deep" id="conteudo-curso" aria-labelledby="modulos-titulo">
+      <div class="container">
+        <p class="eyebrow reveal">Por dentro do curso</p>
+        <h2 class="title reveal" id="modulos-titulo">Conteúdo <span class="hl">do curso</span></h2>
+        <p class="lead reveal" data-cfg-hide="numeroAulas"><span data-cfg="numeroAulas"></span> aulas organizadas em 5 módulos e um bônus.</p>
+        <div class="modules">
+          <details class="module reveal" open>
+            <summary><span class="module__thumb" aria-hidden="true">1</span><span><span class="module__tag">Módulo 1</span><span class="module__name">Fundamentos</span><span class="module__count">3 aulas</span></span></summary>
+            <ol class="lessons"><li>Boas-vindas e por que investir em tráfego</li><li>Meta Ads ou Google Ads</li><li>Funil de vendas na prática</li></ol>
           </details>
-          <details class="acc reveal">
-            <summary><span class="acc__tag">Módulo 2</span><span class="acc__title">Estratégia e decisão</span></summary>
-            <ul class="acc__list">
-              <li>Potencializadores do tráfego pago</li>
-              <li>Comercial e atendimento</li>
-              <li>Quanto investir</li>
-            </ul>
+          <details class="module reveal">
+            <summary><span class="module__thumb" aria-hidden="true">2</span><span><span class="module__tag">Módulo 2</span><span class="module__name">Estratégia e decisão</span><span class="module__count">3 aulas</span></span></summary>
+            <ol class="lessons"><li>Potencializadores do tráfego pago</li><li>Comercial e atendimento</li><li>Quanto investir</li></ol>
           </details>
-          <details class="acc reveal">
-            <summary><span class="acc__tag">Módulo 3</span><span class="acc__title">Meta Ads</span></summary>
-            <ul class="acc__list">
-              <li>Estrutura necessária para anunciar</li>
-              <li>Conta profissional, página, portfólio e conta de anúncio</li>
-              <li>Públicos: salvo, personalizado e semelhante</li>
-              <li>Criativos que convertem: AIDA e Biblioteca de Anúncios</li>
-              <li>Campanha para WhatsApp</li>
-              <li>Campanha de cadastro</li>
-            </ul>
+          <details class="module reveal">
+            <summary><span class="module__thumb" aria-hidden="true">3</span><span><span class="module__tag">Módulo 3</span><span class="module__name">Meta Ads</span><span class="module__count">6 aulas</span></span></summary>
+            <ol class="lessons"><li>Estrutura necessária para anunciar</li><li>Conta profissional, página, portfólio e conta de anúncio</li><li>Públicos: salvo, personalizado e semelhante</li><li>Criativos que convertem: AIDA e Biblioteca de Anúncios</li><li>Campanha para WhatsApp</li><li>Campanha de cadastro</li></ol>
           </details>
-          <details class="acc reveal">
-            <summary><span class="acc__tag">Módulo 4</span><span class="acc__title">Google Ads</span></summary>
-            <ul class="acc__list">
-              <li>Fundamentos do Google Ads</li>
-              <li>Planejador de palavras-chave</li>
-              <li>Campanha de pesquisa na prática</li>
-              <li>Google Meu Negócio</li>
-            </ul>
+          <details class="module reveal">
+            <summary><span class="module__thumb" aria-hidden="true">4</span><span><span class="module__tag">Módulo 4</span><span class="module__name">Google Ads</span><span class="module__count">4 aulas</span></span></summary>
+            <ol class="lessons"><li>Fundamentos do Google Ads</li><li>Planejador de palavras-chave</li><li>Campanha de pesquisa na prática</li><li>Google Meu Negócio</li></ol>
           </details>
-          <details class="acc reveal">
-            <summary><span class="acc__tag">Módulo 5</span><span class="acc__title">Métricas</span></summary>
-            <ul class="acc__list">
-              <li>Como ler as métricas</li>
-              <li>Métricas na prática</li>
-              <li>Análise de métricas no Google Ads</li>
-            </ul>
+          <details class="module reveal">
+            <summary><span class="module__thumb" aria-hidden="true">5</span><span><span class="module__tag">Módulo 5</span><span class="module__name">Métricas</span><span class="module__count">3 aulas</span></span></summary>
+            <ol class="lessons"><li>Como ler as métricas</li><li>Métricas na prática</li><li>Análise de métricas no Google Ads</li></ol>
           </details>
-          <details class="acc acc--bonus reveal">
-            <summary><span class="acc__tag">Bônus</span><span class="acc__title">Bônus em vídeo</span></summary>
-            <ul class="acc__list">
-              <li>Como gravar bons vídeos</li>
-            </ul>
+          <details class="module module--bonus reveal">
+            <summary><span class="module__thumb" aria-hidden="true">+</span><span><span class="module__tag">Bônus</span><span class="module__name">Bônus em vídeo</span><span class="module__count">1 aula</span></span></summary>
+            <ol class="lessons"><li>Como gravar bons vídeos</li></ol>
           </details>
         </div>
+        <div class="center reveal"><a class="btn btn--primary btn--lg js-buy" href="#oferta"><span>Quero acessar o curso</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
       </div>
     </section>
 
     <!-- 7. Caso real -->
-    <section class="section" id="caso" aria-labelledby="caso-titulo">
-      <div class="container container--narrow">
-        <article class="case reveal">
-          <h2 class="eyebrow" id="caso-titulo">Caso real</h2>
-          <div class="case__numbers" aria-label="De R$ 50 por dia para R$ 1.000 por dia de investimento">
-            <div class="case__num">
-              <span class="case__value">R$&nbsp;50<small>/dia</small></span>
-              <span class="case__label">no começo</span>
+    <section class="section section--red" id="caso" aria-labelledby="caso-titulo">
+      <div class="container">
+        <p class="eyebrow eyebrow--light reveal">Caso real</p>
+        <h2 class="title reveal" id="caso-titulo">Ele não começou grande. <span class="hl">Começou pequeno.</span></h2>
+        <div class="case reveal">
+          <div class="case__cards" aria-label="Investimento diário: de R$ 50 no começo para R$ 1.000 hoje">
+            <div class="stat stat--left">
+              <span class="stat__label">Investimento por dia · no começo</span>
+              <span class="stat__value">R$&nbsp;50<small>/dia</small></span>
             </div>
             <span class="case__arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            <div class="case__num case__num--big">
-              <span class="case__value">R$&nbsp;1.000<small>/dia</small></span>
-              <span class="case__label">hoje</span>
+            <div class="stat stat--right">
+              <span class="stat__label">Investimento por dia · hoje</span>
+              <span class="stat__value stat__value--hot">R$&nbsp;1.000<small>/dia</small></span>
             </div>
           </div>
-          <p class="case__text">Um dos meus clientes, uma casa de eventos, começou investindo R$&nbsp;50 por dia. Hoje investe R$&nbsp;1.000 por dia e fatura perto de R$&nbsp;100 mil por mês. Ele não começou grande. Começou pequeno e foi aumentando conforme as vendas vinham.</p>
-          <p class="case__disclaimer">Resultado de um cliente específico. Resultados variam conforme o negócio, a oferta e o investimento.</p>
-        </article>
+          <div class="case__body">
+            <p class="case__text">Um dos meus clientes, uma casa de eventos, começou investindo R$&nbsp;50 por dia. Hoje investe R$&nbsp;1.000 por dia e fatura perto de R$&nbsp;100 mil por mês. Ele não começou grande. Começou pequeno e foi aumentando conforme as vendas vinham.</p>
+            <p class="case__disclaimer">Resultado de um cliente específico. Resultados variam conforme o negócio, a oferta e o investimento.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 8. Quem ensina -->
-    <section class="section section--alt" id="instrutor" aria-labelledby="instrutor-titulo">
+    <section class="section" id="instrutor" aria-labelledby="instrutor-titulo">
       <div class="container">
         <div class="teacher">
           <div class="teacher__photo reveal">
             <img data-cfg-src="imagemInstrutor" src="assets/instrutor.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Foto de Hian, instrutor do curso">
           </div>
           <div class="teacher__text reveal">
-            <h2 class="eyebrow" id="instrutor-titulo">Quem ensina</h2>
+            <p class="eyebrow">Instrutor</p>
+            <h2 class="title title--left" id="instrutor-titulo">Quem <span class="hl">ensina</span></h2>
             <p class="teacher__quote">Sou o <span data-cfg="instrutor">Hian</span>. Trabalho com tráfego pago para negócios locais desde 2019, atendendo clínicas, profissionais liberais, lojas e empresas de vários segmentos. Neste curso eu ensino a técnica, botão por botão, e principalmente os fundamentos que fazem a técnica dar resultado.</p>
-            <a class="teacher__handle" data-cfg-hide="arroba" data-cfg-instagram target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-profile"/></svg><span data-cfg="arroba"></span></a>
+            <div class="teacher__links">
+              <a class="chip" data-cfg-hide="arroba" data-cfg-instagram target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-profile"/></svg><span data-cfg="arroba"></span></a>
+              <a class="chip" data-cfg-hide="siteEmpresa" data-cfg-href="siteEmpresa" target="_blank" rel="noopener"><span data-cfg="empresa">T9 ADS Company</span></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 9. Para quem é -->
-    <section class="section" id="para-quem" aria-labelledby="para-quem-titulo">
+    <section class="section section--deep" id="para-quem" aria-labelledby="para-quem-titulo">
       <div class="container container--narrow">
-        <h2 class="section__title reveal" id="para-quem-titulo">Para quem é</h2>
+        <p class="eyebrow reveal">Para quem é</p>
+        <h2 class="title reveal" id="para-quem-titulo">Este curso é <span class="hl">para você se…</span></h2>
         <ul class="checklist" data-perfil="empresario">
           <li class="reveal"><span class="check" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Profissional liberal: médico, dentista, psicólogo, advogado, corretor.</li>
           <li class="reveal"><span class="check" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Dono de loja, clínica, restaurante ou prestador de serviço local.</li>
@@ -279,21 +288,23 @@
     </section>
 
     <!-- 10. Bônus (gerado a partir de CONFIG.bonus) -->
-    <section class="section section--alt" id="bonus" aria-labelledby="bonus-titulo" hidden>
+    <section class="section" id="bonus" aria-labelledby="bonus-titulo" hidden>
       <div class="container">
-        <h2 class="section__title reveal" id="bonus-titulo">Bônus</h2>
+        <p class="eyebrow reveal">Além das aulas</p>
+        <h2 class="title reveal" id="bonus-titulo"><span class="hl">Bônus</span></h2>
         <ul class="bonus-grid" id="bonus-lista"></ul>
       </div>
     </section>
 
     <!-- 11. Oferta -->
     <section class="section offer-section" id="oferta" aria-labelledby="oferta-titulo">
+      <div class="offer__glow" aria-hidden="true"></div>
       <div class="container">
+        <p class="title title--glow reveal" aria-hidden="true">Acesso imediato <span class="hl">ao treinamento</span></p>
         <div class="offer reveal">
-          <p class="offer__eyebrow">Tudo o que você precisa para começar</p>
           <h2 class="offer__title" id="oferta-titulo">
             <span data-cfg="nomeCurso" data-cfg-hide="nomeCurso"></span>
-            <span class="offer__title-fallback" data-cfg-show-if-missing="nomeCurso">Curso completo de tráfego pago</span>
+            <span data-cfg-show-if-missing="nomeCurso">Curso de <span class="hl">tráfego pago</span></span>
           </h2>
           <ul class="offer__list">
             <li data-cfg-hide="numeroAulas"><span class="check" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span><span data-cfg="numeroAulas"></span> aulas em 5 módulos</span></li>
@@ -304,13 +315,13 @@
           </ul>
 
           <div class="offer__price">
-            <span class="offer__price-label">Valor</span>
+            <span class="offer__price-label">Por</span>
             <span class="offer__price-value" data-cfg="preco">R$ 97</span>
           </div>
           <p class="offer__support" data-perfil="empresario">É menos do que muita gente gasta em uma semana de anúncio mal feito.</p>
           <p class="offer__support" data-perfil="gestor" hidden>Um cliente que fica um mês a mais já paga o curso várias vezes.</p>
 
-          <a class="btn btn--primary btn--lg btn--block js-buy" href="#oferta">Quero começar agora</a>
+          <a class="btn btn--primary btn--lg btn--block js-buy" href="#oferta"><span>Quero começar agora</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
 
           <p class="offer__guarantee" data-cfg-hide="garantia"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-cfg="garantia"></span></p>
 
@@ -324,43 +335,27 @@
     </section>
 
     <!-- 12. Perguntas frequentes -->
-    <section class="section section--alt" id="faq" aria-labelledby="faq-titulo">
+    <section class="section section--deep" id="faq" aria-labelledby="faq-titulo">
       <div class="container container--narrow">
-        <h2 class="section__title reveal" id="faq-titulo">Perguntas frequentes</h2>
-        <div class="accordion">
-          <details class="acc acc--faq reveal">
-            <summary><span class="acc__title">Preciso ter experiência?</span></summary>
-            <p class="acc__body">Não. As aulas partem do zero, inclusive a criação das contas.</p>
-          </details>
-          <details class="acc acc--faq reveal">
-            <summary><span class="acc__title">Quanto preciso investir em anúncio?</span></summary>
-            <p class="acc__body">Você decide. No curso eu mostro como começar com cerca de R$&nbsp;20 por dia.</p>
-          </details>
-          <details class="acc acc--faq reveal">
-            <summary><span class="acc__title">Serve para o meu segmento?</span></summary>
-            <p class="acc__body">Os exemplos são de negócios locais: saúde, imóveis, alimentação, lojas e serviços. Os fundamentos valem para qualquer área.</p>
-          </details>
-          <details class="acc acc--faq reveal">
-            <summary><span class="acc__title">É só Meta Ads?</span></summary>
-            <p class="acc__body">Não. Tem Meta Ads e Google Ads, incluindo Google Meu Negócio.</p>
-          </details>
-          <details class="acc acc--faq reveal" data-cfg-hide="prazoAcesso">
-            <summary><span class="acc__title">Por quanto tempo tenho acesso?</span></summary>
-            <p class="acc__body" data-cfg="prazoAcesso"></p>
-          </details>
-          <details class="acc acc--faq reveal">
-            <summary><span class="acc__title">Como recebo o acesso?</span></summary>
-            <p class="acc__body">Assim que o pagamento é confirmado, você recebe o acesso por e-mail.</p>
-          </details>
+        <p class="eyebrow reveal">Dúvidas</p>
+        <h2 class="title reveal" id="faq-titulo">Perguntas <span class="hl">frequentes</span></h2>
+        <div class="faq">
+          <details class="acc reveal"><summary>Preciso ter experiência?</summary><p>Não. As aulas partem do zero, inclusive a criação das contas.</p></details>
+          <details class="acc reveal"><summary>Quanto preciso investir em anúncio?</summary><p>Você decide. No curso eu mostro como começar com cerca de R$&nbsp;20 por dia.</p></details>
+          <details class="acc reveal"><summary>Serve para o meu segmento?</summary><p>Os exemplos são de negócios locais: saúde, imóveis, alimentação, lojas e serviços. Os fundamentos valem para qualquer área.</p></details>
+          <details class="acc reveal"><summary>É só Meta Ads?</summary><p>Não. Tem Meta Ads e Google Ads, incluindo Google Meu Negócio.</p></details>
+          <details class="acc reveal" data-cfg-hide="prazoAcesso"><summary>Por quanto tempo tenho acesso?</summary><p data-cfg="prazoAcesso"></p></details>
+          <details class="acc reveal"><summary>Como recebo o acesso?</summary><p>Assim que o pagamento é confirmado, você recebe o acesso por e-mail.</p></details>
         </div>
       </div>
     </section>
 
     <!-- 13. Chamada final -->
     <section class="section final" id="final" aria-labelledby="final-titulo">
+      <div class="final__glow" aria-hidden="true"></div>
       <div class="container container--narrow final__inner">
-        <h2 class="final__title reveal" id="final-titulo">Comece pequeno. <span class="hl">Comece hoje.</span></h2>
-        <a class="btn btn--primary btn--lg js-buy reveal" href="#oferta"><span>Quero o curso por <span data-cfg="preco">R$ 97</span></span></a>
+        <h2 class="title title--xl reveal" id="final-titulo">Comece pequeno. <span class="hl">Comece hoje.</span></h2>
+        <a class="btn btn--primary btn--lg js-buy reveal" href="#oferta"><span>Quero o curso por <span data-cfg="preco">R$ 97</span></span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="whats-link reveal" data-cfg-hide="whatsapp" data-whatsapp target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Ficou com dúvida? Fale comigo no WhatsApp
         </a>
@@ -372,15 +367,24 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <strong data-cfg="nomeCurso" data-cfg-hide="nomeCurso"></strong>
-        <a data-cfg-hide="arroba" data-cfg-instagram target="_blank" rel="noopener"><span data-cfg="arroba"></span></a>
+        <a class="brand brand--footer" data-cfg-href="siteEmpresa" target="_blank" rel="noopener">
+          <span class="brand__logo" data-cfg-hide="logoEmpresa">
+            <img data-cfg-src="logoEmpresa" src="assets/logo-t9.svg" width="1041" height="704" alt="" loading="lazy">
+            <span class="brand__sub">ADS Company</span>
+          </span>
+          <span class="sr-only" data-cfg="empresa">T9 ADS Company</span>
+        </a>
+        <div class="footer__meta">
+          <strong data-cfg="nomeCurso" data-cfg-hide="nomeCurso"></strong>
+          <a data-cfg-hide="arroba" data-cfg-instagram target="_blank" rel="noopener"><span data-cfg="arroba"></span></a>
+        </div>
       </div>
       <nav class="footer__nav" aria-label="Links legais">
         <a href="termos.html">Termos de uso</a>
         <a href="privacidade.html">Política de privacidade</a>
         <button type="button" class="linklike" data-cookie-reopen hidden>Preferências de cookies</button>
       </nav>
-      <p class="footer__copy">© <span data-ano></span> <span data-cfg="instrutor">Hian</span>. Todos os direitos reservados.</p>
+      <p class="footer__copy">© <span data-ano></span> <span data-cfg="instrutor">Hian</span> · <span data-cfg="empresa">T9 ADS Company</span>. Todos os direitos reservados.</p>
     </div>
   </footer>
 

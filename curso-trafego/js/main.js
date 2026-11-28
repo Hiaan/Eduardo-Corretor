@@ -48,6 +48,11 @@
       if (val && el.getAttribute('src') !== val) el.setAttribute('src', val);
     });
 
+    $all('[data-cfg-href]').forEach(function (el) {
+      var val = cfg(el.getAttribute('data-cfg-href'));
+      if (val) el.href = val; else el.removeAttribute('href');
+    });
+
     var arroba = cfg('arroba').replace(/^@/, '');
     $all('[data-cfg-instagram]').forEach(function (el) {
       if (arroba) el.href = 'https://www.instagram.com/' + encodeURIComponent(arroba) + '/';
@@ -65,7 +70,7 @@
 
     var nomeCurso = cfg('nomeCurso');
     if (nomeCurso && document.body.hasAttribute('data-perfil-ativo')) {
-      document.title = nomeCurso + ' | ' + (cfg('instrutor') || 'Curso de tráfego pago');
+      document.title = nomeCurso + ' | ' + [cfg('instrutor'), cfg('empresa')].filter(Boolean).join(' · ');
     }
   }
 
@@ -77,16 +82,14 @@
     if (!url || !frame) return;
     var m = url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
     if (!m) return;
-    frame.classList.add('media-frame--video');
-    frame.parentElement.parentElement.classList.add('hero__grid--video');
-    frame.innerHTML = '';
+    frame.innerHTML = '<div class="video-frame"></div>';
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + m[1] + '?rel=0';
     iframe.title = 'Vídeo de apresentação do curso';
     iframe.loading = 'lazy';
     iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
     iframe.setAttribute('allowfullscreen', '');
-    frame.appendChild(iframe);
+    frame.firstChild.appendChild(iframe);
   }
 
   /* ---------- 3. bônus ---------- */
@@ -119,6 +122,14 @@
       lista.appendChild(li);
     });
     section.hidden = false;
+  }
+
+  /* ---------- 3b. módulos abertos no desktop ---------- */
+
+  function modulos() {
+    if (window.matchMedia && window.matchMedia('(min-width: 900px)').matches) {
+      $all('details.module').forEach(function (d) { d.open = true; });
+    }
   }
 
   /* ---------- 4. seletor de público ---------- */
@@ -294,6 +305,7 @@
     preencher();
     videoHero();
     bonus();
+    modulos();
     perfil();
     botoesCompra();
     stickyCta();
